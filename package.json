@@ -1,8 +1,16 @@
 {
-  "name": "cli-c",
-  "version": "1.0.0",
+  "name": "ddd-cli",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
+  "bin": "./index.sh",
+  "author": "Alessandro Dev",
+  "description": "This package provide a cli to generate ddd files",
+  "homepage": "https://github.com/4lessandrodev/ddd-cli",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/4lessandrodev/ddd-cli.git"
+	},
   "scripts":{
     "generate": "plop --plopfile ./generator/index.js",
     "module": "yarn generate sample",
@@ -12,5 +20,22 @@
   },
   "devDependencies": {
     "plop": "^3.1.1"
-  }
+  },
+  "keywords": [
+		"Complexity",
+		"NodeJS",
+		"Business Logic",
+		"DDD",
+		"Domain Driving Design",
+		"Typescript",
+		"DDD-Utils",
+		"Base Entity",
+		"Base Aggregate",
+		"Base Value Object",
+		"Use Cases",
+		"Domain Events",
+		"Clean Architecture",
+    "CLI",
+    "Generate Files"
+	]
 }
