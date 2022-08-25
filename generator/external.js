@@ -1,7 +1,7 @@
 module.exports = function (plop) {
 	console.log(`
 
-	Welcome to ddd-cli! 😁
+	Welcome to einstein-cli! 😁
 
 	`);
 	plop.setGenerator('resource', {
