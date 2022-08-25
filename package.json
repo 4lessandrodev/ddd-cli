@@ -1,7 +1,7 @@
 {
   "name": "einstein-cli",
-  "version": "0.0.3",
-  "main": "index.js",
+  "version": "0.0.4",
+  "main": "./index.sh",
   "license": "MIT",
   "bin": "./index.sh",
   "author": "Alessandro Dev",
@@ -12,7 +12,7 @@
 		"url": "git+https://github.com/4lessandrodev/ddd-cli.git"
 	},
   "scripts":{
-    "generate": "plop --plopfile ./generator/index.js",
+    "generate": "plop --plopfile ./generator/external.js",
     "module": "yarn generate sample",
     "mod": "yarn generate sample",
     "resource": "yarn generate",

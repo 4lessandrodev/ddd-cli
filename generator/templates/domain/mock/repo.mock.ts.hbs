@@ -1,8 +1,6 @@
 import Repo from '@modules/{{dashCase moduleName}}/domain/interfaces/repository.interface';
-import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
-import Aggregate from '@modules/{{dashCase moduleName}}/domain/aggregate';
 
-export const repoMock: Repo<Aggregate, Model> = {
+export const repoMock: Repo = {
 	create: jest.fn(),
 	update: jest.fn(),
 	findById: jest.fn(),

@@ -1,14 +1,12 @@
 import { IUseCase, Result } from 'types-ddd';
-import MyRepo from '@modules/{{dashCase moduleName}}/domain/interfaces/repository.interface';
-import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
-import Aggregate from '@modules/{{dashCase moduleName}}/domain/aggregate';
+import {{pascalCase className}}Repo from '@modules/{{dashCase moduleName}}/domain/interfaces/repository.interface';
 
 export interface UseCaseDto {
 	data: string;
 }
 
 export class {{pascalCase className}}UseCase implements IUseCase<UseCaseDto, Result<void>> {
-	constructor(private readonly repo: MyRepo<Aggregate, Model>){}
+	constructor(private readonly repo: {{pascalCase className}}Repo){}
 	async execute(dto: UseCaseDto): Promise<Result<void>> {
 		try {
 

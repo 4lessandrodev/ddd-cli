@@ -74,13 +74,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/value-objects/{{dashCase className}}.value-object.ts',
 						base: 'templates',
-						templateFile: './templates/domain/value-object.ts.hbs'
+						templateFile: './templates/domain/value-object.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/value-objects/{{dashCase className}}.value-object.spec.ts',
 						base: 'templates',
-						templateFile: './templates/domain/tests/value-object.spec.ts.hbs'
+						templateFile: './templates/domain/tests/value-object.spec.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'ddd-aggregate') {
@@ -89,13 +91,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/aggregates/{{dashCase className}}.aggregate.ts',
 						base: 'templates',
-						templateFile: './templates/domain/aggregate.ts.hbs'
+						templateFile: './templates/domain/aggregate.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/aggregates/{{dashCase className}}.aggregate.spec.ts',
 						base: 'templates',
-						templateFile: './templates/domain/tests/aggregate.spec.ts.hbs'
+						templateFile: './templates/domain/tests/aggregate.spec.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'ddd-entity') {
@@ -104,13 +108,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/entities/{{dashCase className}}.entity.ts',
 						base: 'templates',
-						templateFile: './templates/domain/entity.ts.hbs'
+						templateFile: './templates/domain/entity.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/entities/{{dashCase className}}.entity.spec.ts',
 						base: 'templates',
-						templateFile: './templates/domain/tests/entity.spec.ts.hbs'
+						templateFile: './templates/domain/tests/entity.spec.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'use-case') {
@@ -119,13 +125,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/use-cases/{{dashCase className}}.use-case.ts',
 						base: 'templates',
-						templateFile: './templates/app/use-cases/sample/use-case.ts.hbs'
+						templateFile: './templates/app/use-cases/sample/use-case.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/use-cases/{{dashCase className}}.use-case.spec.ts',
 						base: 'templates',
-						templateFile: './templates/app/use-cases/sample/use-case.spec.ts.hbs'
+						templateFile: './templates/app/use-cases/sample/use-case.spec.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'ddd-mapper') {
@@ -134,13 +142,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/mappers/{{dashCase className}}.mapper.ts',
 						base: 'templates',
-						templateFile: './templates/domain/adapters/adapter.ts.hbs'
+						templateFile: './templates/domain/adapters/adapter.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/mappers/{{dashCase className}}.mapper.spec.ts',
 						base: 'templates',
-						templateFile: './templates/domain/adapters/adapter.spec.ts.hbs'
+						templateFile: './templates/domain/adapters/adapter.spec.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'model') {
@@ -149,13 +159,15 @@ module.exports = function (plop) {
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/models/{{dashCase className}}.interface.ts',
 						base: 'templates',
-						templateFile: './templates/domain/interfaces/model.interface.ts.hbs'
+						templateFile: './templates/domain/interfaces/model.interface.ts.hbs',
+						skipIfExists: true
 					},
 					{
 						type: 'add',
 						path: '../../../src/modules/{{dashCase moduleName}}/models/{{dashCase className}}.model.ts',
 						base: 'templates',
-						templateFile: './templates/infra/models/model.ts.hbs'
+						templateFile: './templates/infra/models/model.ts.hbs',
+						skipIfExists: true
 					},
 				);
 			} else if (option === 'ddd-repository') {
@@ -164,13 +176,15 @@ module.exports = function (plop) {
 							type: 'add',
 							path: '../../../src/modules/{{dashCase moduleName}}/repository/{{dashCase className}}.repository.ts',
 							base: 'templates',
-							templateFile: './templates/infra/repo/repository.ts.hbs'
+							templateFile: './templates/infra/repo/repository.ts.hbs',
+							skipIfExists: true
 						},
 						{
 							type: 'add',
 							path: '../../../src/modules/{{dashCase moduleName}}/repository/{{dashCase className}}.interface.ts',
 							base: 'templates',
-							templateFile: './templates/domain/interfaces/repository.interface.ts.hbs'
+							templateFile: './templates/domain/interfaces/repository.interface.ts.hbs',
+							skipIfExists: true
 						},
 				);
 			} else {
@@ -180,6 +194,7 @@ module.exports = function (plop) {
 						destination: '../../../src/modules/{{dashCase moduleName}}',
 						templateFiles: './templates/',
 						base: 'templates',
+						skipIfExists: true,
 						transform: (template) => {
 							const data = template.replaceAll(/\/my-module\//g, `/${moduleName}/`);
 							return data;
