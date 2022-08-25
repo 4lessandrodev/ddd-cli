@@ -2,12 +2,19 @@ import {{pascalCase className}}ValueObject from '@modules/{{dashCase moduleName}
 
 describe('value-object', () => {
 	describe('success cases', () => {
-		const result = {{pascalCase className}}ValueObject.create('valid_value');
-		expect(result.isOk()).toBeTruthy();
+
+		it('should create a valid instance', () => {
+			const result = {{pascalCase className}}ValueObject.create('valid_value');
+			expect(result.isOk()).toBeTruthy();
+		});
 	});
 
 	describe('failure cases', () => {
-		const result = {{pascalCase className}}ValueObject.create(undefined as unknown as string);
-		expect(result.isFail()).toBeTruthy();
+
+		it('should fail if provide undefined value', () => {
+			const result = {{pascalCase className}}ValueObject.create(undefined as unknown as string);
+			expect(result.isFail()).toBeTruthy();
+		});
 	});
-})
+	
+});
