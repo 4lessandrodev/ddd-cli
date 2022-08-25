@@ -56,7 +56,7 @@ module.exports = function (plop) {
 		],
 		actions: function (data) {
 			const actions = [];
-			const { option } = data;
+			const { option, name } = data;
 			if (option === 'valueObject') {
 				actions.push(
 					{
@@ -152,9 +152,13 @@ module.exports = function (plop) {
 				actions.push(
 					{
 						type: 'addMany',
-						destination: '../src/generated/{{dashCase name}}',
+						destination: '../src/generated/{{dashCase name}}/',
 						templateFiles: './templates/',
-						stripExtensions: ['hbs']
+						stripExtensions: ['.hbs', '.ts'],
+						transform: (template) => {
+							const data = template.replaceAll(/\/my-module\//g, `/${name}/`);
+							return data;
+						}
 					}
 				);
 			}
