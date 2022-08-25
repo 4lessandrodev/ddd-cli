@@ -24,37 +24,37 @@ module.exports = function (plop) {
 				choices: [
 					{
 						type: 'confirm',
-						name: 'module',
+						name: 'ddd-module',
 						message: 'Do you want a Module?'
 					},
 					{
 						type: 'confirm',
-						name: 'valueObject',
+						name: 'ddd-value-object',
 						message: 'Do you want Value Object?'
 					},
 					{
 						type: 'confirm',
-						name: 'repository',
+						name: 'ddd-repository',
 						message: 'Do you want a Repository?'
 					},
 					{
 						type: 'confirm',
-						name: 'aggregate',
+						name: 'ddd-aggregate',
 						message: 'Do you want Aggregate?'
 					},
 					{
 						type: 'confirm',
-						name: 'entity',
+						name: 'ddd-entity',
 						message: 'Do you want Entity?'
 					},
 					{
 						type: 'confirm',
-						name: 'useCase',
+						name: 'use-case',
 						message: 'Do you want Use Case?'
 					},
 					{
 						type: 'confirm',
-						name: 'mapper',
+						name: 'ddd-mapper',
 						message: 'Do you want Adapter?'
 					},
 					{
@@ -68,7 +68,7 @@ module.exports = function (plop) {
 		actions: function (data) {
 			const actions = [];
 			const { option, className, moduleName } = data;
-			if (option === 'valueObject') {
+			if (option === 'ddd-value-object') {
 				actions.push(
 					{
 						type: 'add',
@@ -83,7 +83,7 @@ module.exports = function (plop) {
 						templateFile: './templates/domain/tests/value-object.spec.ts.hbs'
 					},
 				);
-			} else if (option === 'aggregate') {
+			} else if (option === 'ddd-aggregate') {
 				actions.push(
 					{
 						type: 'add',
@@ -98,7 +98,7 @@ module.exports = function (plop) {
 						templateFile: './templates/domain/tests/aggregate.spec.ts.hbs'
 					},
 				);
-			} else if (option === 'entity') {
+			} else if (option === 'ddd-entity') {
 				actions.push(
 					{
 						type: 'add',
@@ -113,7 +113,7 @@ module.exports = function (plop) {
 						templateFile: './templates/domain/tests/entity.spec.ts.hbs'
 					},
 				);
-			} else if (option === 'useCase') {
+			} else if (option === 'use-case') {
 				actions.push(
 					{
 						type: 'add',
@@ -128,7 +128,7 @@ module.exports = function (plop) {
 						templateFile: './templates/app/use-cases/sample/use-case.spec.ts.hbs'
 					},
 				);
-			} else if (option === 'mapper') {
+			} else if (option === 'ddd-mapper') {
 				actions.push(
 					{
 						type: 'add',
@@ -158,7 +158,7 @@ module.exports = function (plop) {
 						templateFile: './templates/infra/models/model.ts.hbs'
 					},
 				);
-			} else if (option === 'repository') {
+			} else if (option === 'ddd-repository') {
 					actions.push(
 						{
 							type: 'add',
