@@ -4,7 +4,7 @@ export interface Props {
 	value: string;
 }
 
-export class MyValueObject extends ValueObject<Props> {
+export class {{pascalCase className}}ValueObject extends ValueObject<Props> {
 	private constructor(props: Props){
 		super(props, { disableSetters: true });
 	}
@@ -13,13 +13,13 @@ export class MyValueObject extends ValueObject<Props> {
 		return typeof value !== 'undefined';
 	}
 
-	public static create(value: string): Result<MyValueObject> {
-		const isValidValue = MyValueObject.isValidProps({ value });
+	public static create(value: string): Result<{{pascalCase className}}ValueObject> {
+		const isValidValue = {{pascalCase className}}ValueObject.isValidProps({ value });
 
 		if(!isValidValue) return Result.fail('Invalid value');
 
-		return Result.Ok(new MyValueObject({ value }));
+		return Result.Ok(new {{pascalCase className}}ValueObject({ value }));
 	}
 }
 
-export default MyValueObject;
+export default {{pascalCase className}}ValueObject;

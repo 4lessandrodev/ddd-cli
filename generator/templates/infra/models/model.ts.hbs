@@ -1,6 +1,6 @@
-import Model from '@modules/my-module/domain/interfaces/model.interface';
+import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
 
-export class MyModel implements Model {
+export class {{pascalCase className}}Model implements Model {
 	id!: string;
 	keyA!: string;
 	keyB!: number;
@@ -8,4 +8,4 @@ export class MyModel implements Model {
 	updatedAt!: Date;
 }
 
-export default MyModel;
+export default {{pascalCase className}}Model;

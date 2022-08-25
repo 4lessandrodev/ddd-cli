@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts":{
-    "generate": "yarn plop --plopfile ./generator/plopfile.js"
+    "generate": "plop --plopfile ./generator/index.js",
+    "module": "yarn generate sample",
+    "mod": "yarn generate sample",
+    "resource": "yarn generate",
+    "res": "yarn generate"
   },
   "devDependencies": {
     "plop": "^3.1.1"

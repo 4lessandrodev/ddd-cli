@@ -1,13 +1,13 @@
-import MyValueObject, { Props } from '@modules/my-module/domain/value-object';
+import {{pascalCase className}}ValueObject, { Props } from '@modules/{{dashCase moduleName}}/domain/value-object';
 
 describe('value-object', () => {
 	describe('success cases', () => {
-		const result = MyValueObject.create('valid_value');
+		const result = {{pascalCase className}}ValueObject.create('valid_value');
 		expect(result.isOk()).toBeTruly();
 	});
 
 	describe('failure cases', () => {
-		const result = MyValueObject.create(undefined as unknown as string);
+		const result = {{pascalCase className}}ValueObject.create(undefined as unknown as string);
 		expect(result.isFail()).toBeTruly();
 	});
 })

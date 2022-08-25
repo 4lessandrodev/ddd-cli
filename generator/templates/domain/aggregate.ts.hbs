@@ -6,14 +6,14 @@ export interface Props {
 	keyB: number;
 }
 
-export class MyAggregate extends Aggregate<Props> {
+export class {{pascalCase className}}Aggregate extends Aggregate<Props> {
 	private constructor(props: Props){
 		super(props);
 	}
 
-	public static create(props: Props): Result<MyAggregate> {
-		return Result.Ok(new MyAggregate(props));
+	public static create(props: Props): Result<{{pascalCase className}}Aggregate> {
+		return Result.Ok(new {{pascalCase className}}Aggregate(props));
 	}
 }
 
-export default MyAggregate;
+export default {{pascalCase className}}Aggregate;

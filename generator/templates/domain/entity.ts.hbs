@@ -6,14 +6,14 @@ export interface Props {
 	keyB: number;
 }
 
-export class MyEntity extends Entity<Props> {
+export class {{pascalCase className}}Entity extends Entity<Props> {
 	private constructor(props: Props){
 		super(props);
 	}
 
-	public static create(props: Props): Result<MyEntity> {
-		return Result.Ok(new MyEntity(props));
+	public static create(props: Props): Result<{{pascalCase className}}Entity> {
+		return Result.Ok(new {{pascalCase className}}Entity(props));
 	}
 }
 
-export default MyEntity;
+export default {{pascalCase className}}Entity;

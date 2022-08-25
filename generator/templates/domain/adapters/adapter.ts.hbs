@@ -1,12 +1,12 @@
 import { IAdapter, Result } from 'types-ddd';
-import Model from '@modules/my-module/domain/interfaces/model.interface';
-import Aggregate from '@modules/my-module/domain/aggregate';
+import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
+import Aggregate from '@modules/{{dashCase moduleName}}/domain/aggregate';
 
-export class MyToDomainAdapter implements IAdapter<Model, Aggregate> {
+export class {{pascalCase className}}ToDomainAdapter implements IAdapter<Model, Aggregate> {
 	build(model: Model): Result<Aggregate> {
 		// ... your code
 		return Result.fail('Method not implemented');
 	}
 }
 
-export default MyToDomainAdapter;
+export default {{pascalCase className}}ToDomainAdapter;
