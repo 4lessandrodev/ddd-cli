@@ -15,7 +15,7 @@ describe('adapter', () => {
 	describe('failure cases', () => {
 		it('should fail if method is not implemented', () => {
 			const result = adapter.build(modelMock);
-			expect(result.isFail()).toBeTruly();
+			expect(result.isFail()).toBeTruthy();
 		});
 	});
 

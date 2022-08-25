@@ -3,11 +3,11 @@ import {{pascalCase className}}ValueObject, { Props } from '@modules/{{dashCase 
 describe('value-object', () => {
 	describe('success cases', () => {
 		const result = {{pascalCase className}}ValueObject.create('valid_value');
-		expect(result.isOk()).toBeTruly();
+		expect(result.isOk()).toBeTruthy();
 	});
 
 	describe('failure cases', () => {
 		const result = {{pascalCase className}}ValueObject.create(undefined as unknown as string);
-		expect(result.isFail()).toBeTruly();
+		expect(result.isFail()).toBeTruthy();
 	});
 })
