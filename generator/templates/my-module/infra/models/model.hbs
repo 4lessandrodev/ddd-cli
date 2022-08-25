@@ -1,0 +1,11 @@
+import Model from '@modules/my-module/domain/interfaces/model.interface';
+
+export class MyModel implements Model {
+	id!: string;
+	keyA!: string;
+	keyB!: number;
+	createdAt!: Date;
+	updatedAt!: Date;
+}
+
+export default MyModel;

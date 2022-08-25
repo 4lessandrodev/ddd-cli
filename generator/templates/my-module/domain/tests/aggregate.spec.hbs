@@ -1,0 +1,20 @@
+import Aggregate, { Props } from '@modules/my-module/domain/aggregate';
+
+describe('aggregate', () => {
+
+	describe('success cases', () => {
+		it('should create an aggregate with success', () => {
+
+			const props: Props = {
+				id: ID.create(),
+				keyA: 'valid_value',
+				keyB: 42
+			};
+
+			const result = Aggregate.create(props);
+			expect(result.isOk()).toBeTruly();
+		});
+	});
+
+});
+

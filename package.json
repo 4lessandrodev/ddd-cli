@@ -1,0 +1,12 @@
+{
+  "name": "cli-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts":{
+    "generate": "yarn plop --plopfile ./generator/plopfile.js"
+  },
+  "devDependencies": {
+    "plop": "^3.1.1"
+  }
+}

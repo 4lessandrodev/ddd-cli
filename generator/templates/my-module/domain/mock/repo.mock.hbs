@@ -1,0 +1,13 @@
+import MyRepo from '@modules/my-module/domain/interfaces/repository.interface';
+import Model from '@modules/my-module/domain/interfaces/model.interface';
+import Aggregate from '@modules/my-module/domain/aggregate';
+
+export const repoMock: MyRepo<Aggregate, Model> = {
+	create: jest.fn(),
+	update: jest.fn(),
+	findById: jest.fn(),
+	deleteById: jest.fn(),
+	findMany: jest.fn(),
+}
+
+export default repoMock;

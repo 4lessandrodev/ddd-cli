@@ -1,0 +1,24 @@
+import { IUseCase, Result } from 'types-ddd';
+import MyRepo from '@modules/my-module/domain/interfaces/repository.interface';
+import Model from '@modules/my-module/domain/interfaces/model.interface';
+import Aggregate from '@modules/my-module/domain/aggregate';
+
+export interface UseCaseDto {
+	data: string;
+}
+
+export class MyUseCase implements IUseCase<UseCaseDto, Result<void>> {
+	constructor(private readonly repo: MyRepo<Aggregate, Model>){}
+	async execute(dto: UseCaseDto): Promise<Result<void>> {
+		try {
+
+			// your code ...
+
+			return Result.Ok();
+		} catch (error: any) {
+			return Result.fail(error.message);
+		}
+	}
+}
+
+export default MyUseCase;

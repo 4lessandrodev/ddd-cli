@@ -1,0 +1,27 @@
+import RepoInterface from '@modules/my-module/domain/interfaces/repository.interface';
+import Model from '@modules/my-module/domain/interfaces/model.interface';
+import Aggregate from '@modules/my-module/domain/aggregate';
+
+export class MyRepository implements RepoInterface<Aggregate, Model> {
+	create(aggregate: Aggregate): Promise<void> {
+		throw new Error('Method not implemented');
+	};
+
+	update(aggregate: Aggregate): Promise<void> {
+		throw new Error('Method not implemented');
+	};
+
+	findById(id: UID): Promise<Aggregate | null> {
+		throw new Error('Method not implemented');
+	};
+
+	deleteById(id: UID): Promise<void> {
+		throw new Error('Method not implemented');
+	};
+
+	findMany(attributes: Partial<Model>): Promise<Model[]> {
+		throw new Error('Method not implemented');
+	};
+}
+
+export default MyRepository;

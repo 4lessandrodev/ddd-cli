@@ -1,0 +1,25 @@
+import { ValueObject, Result } from 'types-ddd';
+
+export interface Props {
+	value: string;
+}
+
+export class MyValueObject extends ValueObject<Props> {
+	private constructor(props: Props){
+		super(props, { disableSetters: true });
+	}
+
+	public static isValidProps({ value }: Props): boolean {
+		return typeof value !== 'undefined';
+	}
+
+	public static create(value: string): Result<MyValueObject> {
+		const isValidValue = MyValueObject.isValidProps({ value });
+
+		if(!isValidValue) return Result.fail('Invalid value');
+
+		return Result.Ok(new MyValueObject({ value }));
+	}
+}
+
+export default MyValueObject;

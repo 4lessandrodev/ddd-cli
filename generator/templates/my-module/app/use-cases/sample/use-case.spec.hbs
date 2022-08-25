@@ -1,0 +1,22 @@
+import UseCase from '@modules/my-module/app/use-cases/sample/use-case';
+import repoMock from '@modules/my-module/domain/mock/repo.mock';
+
+describe('use-case', () => {
+	
+	const useCase = new UseCase(repoMock);
+
+	describe('success cases', () => {
+		it('should return ok', async () => {
+			const result = await useCase.execute({ data: 'ok' });
+			expect(result.isOk()).toBeTruly();
+		});
+	});
+
+	describe('failure cases', () => {
+		it('should fail if provide an invalid value', async () => {
+			const result = await useCase.execute({ data: 'fail' });
+			expect(result.isFail()).toBeFalsy();
+		});
+	});
+
+});
