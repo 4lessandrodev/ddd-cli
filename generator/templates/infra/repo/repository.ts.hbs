@@ -1,5 +1,7 @@
 import { UID } from 'types-ddd';
 import RepoInterface from '@modules/{{dashCase moduleName}}/domain/interfaces/repository.interface';
+import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
+import Aggregate from '@modules/{{dashCase moduleName}}/domain/aggregate';
 
 export class {{pascalCase className}}Repository implements RepoInterface {
 	create(aggregate: Aggregate): Promise<void> {

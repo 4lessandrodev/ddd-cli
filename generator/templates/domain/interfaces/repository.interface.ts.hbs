@@ -1,4 +1,6 @@
 import { UID } from 'types-ddd';
+import Model from '@modules/{{dashCase moduleName}}/domain/interfaces/model.interface';
+import Aggregate from '@modules/{{dashCase moduleName}}/domain/aggregate';
 
 export interface {{pascalCase className}}RepositoryInterface {
 	create(aggregate: Aggregate): Promise<void>;
