@@ -1,4 +1,10 @@
 module.exports = function (plop) {
+	console.log(`
+
+	Bem vindo ao einstein-generator! 😁
+
+	`);
+	plop.getWelcomeMessage();
 	plop.setGenerator('resource', {
 		prompts: [
 			{
@@ -62,12 +68,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/value-objects/{{dashCase name}}.value-object.ts',
-						templateFile: './templates/domain/value-object.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/value-object.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/value-objects/{{dashCase name}}.value-object.spec.ts',
-						templateFile: './templates/domain/tests/value-object.spec.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/tests/value-object.spec.ts.hbs'
 					},
 				);
 			} else if (option === 'aggregate') {
@@ -75,12 +83,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/aggregates/{{dashCase name}}.aggregate.ts',
-						templateFile: './templates/domain/aggregate.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/aggregate.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/aggregates/{{dashCase name}}.aggregate.spec.ts',
-						templateFile: './templates/domain/tests/aggregate.spec.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/tests/aggregate.spec.ts.hbs'
 					},
 				);
 			} else if (option === 'entity') {
@@ -88,12 +98,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/entities/{{dashCase name}}.entity.ts',
-						templateFile: './templates/domain/entity.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/entity.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/entities/{{dashCase name}}.entity.spec.ts',
-						templateFile: './templates/domain/tests/entity.spec.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/tests/entity.spec.ts.hbs'
 					},
 				);
 			} else if (option === 'useCase') {
@@ -101,12 +113,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/use-cases/{{dashCase name}}.use-case.ts',
-						templateFile: './templates/app/use-cases/sample/use-case.hbs'
+						base: 'templates',
+						templateFile: './templates/app/use-cases/sample/use-case.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/use-cases/{{dashCase name}}.use-case.spec.ts',
-						templateFile: './templates/app/use-cases/sample/use-case.spec.hbs'
+						base: 'templates',
+						templateFile: './templates/app/use-cases/sample/use-case.spec.ts.hbs'
 					},
 				);
 			} else if (option === 'mapper') {
@@ -114,12 +128,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/mappers/{{dashCase name}}.mapper.ts',
-						templateFile: './templates/domain/adapters/adapter.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/adapters/adapter.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/mappers/{{dashCase name}}.mapper.spec.ts',
-						templateFile: './templates/domain/adapters/adapter.spec.hbs'
+						base: 'templates',
+						templateFile: './templates/domain/adapters/adapter.spec.ts.hbs'
 					},
 				);
 			} else if (option === 'model') {
@@ -127,12 +143,14 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/models/{{dashCase name}}.interface.ts',
-						templateFile: './templates/domain/interfaces/model.interface.ts'
+						base: 'templates',
+						templateFile: './templates/domain/interfaces/model.interface.ts.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/models/{{dashCase name}}.model.ts',
-						templateFile: './templates/infra/models/model.hbs'
+						base: 'templates',
+						templateFile: './templates/infra/models/model.ts.hbs'
 					},
 				);
 			} else if (option === 'repository') {
@@ -140,21 +158,23 @@ module.exports = function (plop) {
 						{
 							type: 'add',
 							path: '../src/generated/repository/{{dashCase name}}.repository.ts',
-							templateFile: './templates/infra/repo/repository.hbs'
+							base: 'templates',
+							templateFile: './templates/infra/repo/repository.ts.hbs'
 						},
 						{
 							type: 'add',
 							path: '../src/generated/repository/{{dashCase name}}.interface.ts',
-							templateFile: './templates/domain/interfaces/repository.interface.hbs'
+							base: 'templates',
+							templateFile: './templates/domain/interfaces/repository.interface.ts.hbs'
 						},
 				);
 			} else {
 				actions.push(
 					{
 						type: 'addMany',
-						destination: '../src/generated/{{dashCase name}}/',
+						destination: '../src/generated/{{dashCase name}}',
 						templateFiles: './templates/',
-						stripExtensions: ['.hbs', '.ts'],
+						base: 'templates',
 						transform: (template) => {
 							const data = template.replaceAll(/\/my-module\//g, `/${name}/`);
 							return data;
