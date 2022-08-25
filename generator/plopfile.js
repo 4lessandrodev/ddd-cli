@@ -62,12 +62,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/value-objects/{{dashCase name}}.value-object.ts',
-						templateFile: './templates/my-module/domain/value-object.hbs'
+						templateFile: './templates/domain/value-object.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/value-objects/{{dashCase name}}.value-object.spec.ts',
-						templateFile: './templates/my-module/domain/tests/value-object.spec.hbs'
+						templateFile: './templates/domain/tests/value-object.spec.hbs'
 					},
 				);
 			} else if (option === 'aggregate') {
@@ -75,12 +75,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/aggregates/{{dashCase name}}.aggregate.ts',
-						templateFile: './templates/my-module/domain/aggregate.hbs'
+						templateFile: './templates/domain/aggregate.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/aggregates/{{dashCase name}}.aggregate.spec.ts',
-						templateFile: './templates/my-module/domain/tests/aggregate.spec.hbs'
+						templateFile: './templates/domain/tests/aggregate.spec.hbs'
 					},
 				);
 			} else if (option === 'entity') {
@@ -88,12 +88,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/entities/{{dashCase name}}.entity.ts',
-						templateFile: './templates/my-module/domain/entity.hbs'
+						templateFile: './templates/domain/entity.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/entities/{{dashCase name}}.entity.spec.ts',
-						templateFile: './templates/my-module/domain/tests/entity.spec.hbs'
+						templateFile: './templates/domain/tests/entity.spec.hbs'
 					},
 				);
 			} else if (option === 'useCase') {
@@ -101,12 +101,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/use-cases/{{dashCase name}}.use-case.ts',
-						templateFile: './templates/my-module/app/use-cases/sample/use-case.hbs'
+						templateFile: './templates/app/use-cases/sample/use-case.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/use-cases/{{dashCase name}}.use-case.spec.ts',
-						templateFile: './templates/my-module/app/use-cases/sample/use-case.spec.hbs'
+						templateFile: './templates/app/use-cases/sample/use-case.spec.hbs'
 					},
 				);
 			} else if (option === 'mapper') {
@@ -114,12 +114,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/mappers/{{dashCase name}}.mapper.ts',
-						templateFile: './templates/my-module/domain/adapters/adapter.hbs'
+						templateFile: './templates/domain/adapters/adapter.hbs'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/mappers/{{dashCase name}}.mapper.spec.ts',
-						templateFile: './templates/my-module/domain/adapters/adapter.spec.hbs'
+						templateFile: './templates/domain/adapters/adapter.spec.hbs'
 					},
 				);
 			} else if (option === 'model') {
@@ -127,12 +127,12 @@ module.exports = function (plop) {
 					{
 						type: 'add',
 						path: '../src/generated/models/{{dashCase name}}.interface.ts',
-						templateFile: './templates/my-module/domain/interfaces/model.interface.ts'
+						templateFile: './templates/domain/interfaces/model.interface.ts'
 					},
 					{
 						type: 'add',
 						path: '../src/generated/models/{{dashCase name}}.model.ts',
-						templateFile: './templates/my-module/infra/models/model.hbs'
+						templateFile: './templates/infra/models/model.hbs'
 					},
 				);
 			} else if (option === 'repository') {
@@ -140,12 +140,12 @@ module.exports = function (plop) {
 						{
 							type: 'add',
 							path: '../src/generated/repository/{{dashCase name}}.repository.ts',
-							templateFile: './templates/my-module/infra/repo/repository.hbs'
+							templateFile: './templates/infra/repo/repository.hbs'
 						},
 						{
 							type: 'add',
 							path: '../src/generated/repository/{{dashCase name}}.interface.ts',
-							templateFile: './templates/my-module/domain/interfaces/repository.interface.hbs'
+							templateFile: './templates/domain/interfaces/repository.interface.hbs'
 						},
 				);
 			} else {
@@ -153,21 +153,9 @@ module.exports = function (plop) {
 					{
 						type: 'addMany',
 						destination: '../src/generated/{{dashCase name}}',
-						templateFiles: './templates/my-module/app/',
+						templateFiles: './templates/',
 						stripExtensions: ['hbs']
-					},
-					{
-						type: 'addMany',
-						destination: '../src/generated/{{dashCase name}}',
-						templateFiles: './templates/my-module/domain/',
-						stripExtensions: ['hbs']
-					},
-					{
-						type: 'addMany',
-						destination: '../src/generated/{{dashCase name}}',
-						templateFiles: './templates/my-module/infra/',
-						stripExtensions: ['hbs']
-					},
+					}
 				);
 			}
 
