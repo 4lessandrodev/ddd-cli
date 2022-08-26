@@ -1,0 +1,15 @@
+import Event from '@modules/{{dashCase moduleName}}/domain/events/domain.event';
+
+describe('events', () => {
+
+	const event = new Event();
+
+	describe('success cases', () => {
+		it('should event dispatch to be defined', () => {
+
+			const dispatch = event.dispatch;
+			expect(dispatch).toBeDefined();
+		});
+	});
+	
+});

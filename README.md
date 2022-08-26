@@ -1,24 +1,39 @@
-# DDD CLI
+# CLI
 
 A cli to generate domain files
 
-install 
+> Important: Support only for linux and WSL. 
+
+**Do Not install globally.**
+
+---
+
+## install in your project
 
 ```sh
 
-$ npm install ddd-cli
+$ npm install einstein-cli
 
 # OR
 
-$ yarn add ddd-cli
+$ yarn add einstein-cli
 
 ```
 
-Or Run with npx
+Run on your project
 
 ```sh
 
-$ npx ddd-cli
+yarn einstein-cli
 
 ```
+
+![](cli-sample.png)
+
+---
+
+## Next Steps
+
+* [ ] Add support to windows
+* [ ] Add support for global installation
 

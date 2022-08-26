@@ -1,6 +1,6 @@
 {
   "name": "einstein-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./index.sh",
   "license": "MIT",
   "bin": "./index.sh",
@@ -16,7 +16,8 @@
     "module": "yarn generate sample",
     "mod": "yarn generate sample",
     "resource": "yarn generate",
-    "res": "yarn generate"
+    "res": "yarn generate",
+    "einstein-cli": "plop --plopfile ./generator/external.js"
   },
   "devDependencies": {
     "plop": "^3.1.1"
